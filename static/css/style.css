@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*
+Take A Bike Style Sheet
+Filename:   styles.css
+
+Authors:    Alexandra Hanson
+Updated:    April 13, 2019
+*/
+
+/*reset styles*/
+html {
+    font-size: 15px;
+}
+
+div, article, p, figure, figcaption, ul, nav {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* body */
+body {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Alegreya', Serif;
+}
+
+/* headings */
+h1 {
+    font-family: 'Questrial', Sans-Serif;
+}
+
+/* main content */
+.content {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -30%);
+    transform: translate(-50%, -30%);
+}
+#btnSubmit {
+    font-family: 'Alegreya', Serif;
+}
+
+#origin {
+    text-align: right;
+}
+
+#destination {
+    text-align: right;
+}

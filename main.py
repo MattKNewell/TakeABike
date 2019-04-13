@@ -23,6 +23,11 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 # [END create_app]
 
+# [START home]
+@app.route('/')
+def home():
+    return render_template('index.html')
+# [END home]
 
 # [START form]
 @app.route('/form')
