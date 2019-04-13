@@ -33,6 +33,11 @@ body {
 h1 {
     font-family: 'Questrial', Sans-Serif;
 }
+h2 {
+    font-family: 'Alegreya', Serif;
+    font-size: 100%;
+    font-weight: lighter;
+}
 
 /* main content */
 .content {
@@ -44,9 +49,16 @@ h1 {
     transform: translate(-50%, -30%);
 }
 
-.userInput {
-    width: 100%;
-    clear: both;
+#origin {
+    border: 1px solid;
+    border-color: rgb(0,0,0);
+    padding: 10px;
+}
+
+#destination {
+    border: 1px solid;
+    border-color: rgb(0,0,0);
+    padding: 10px;
 }
 
 #userSub {
