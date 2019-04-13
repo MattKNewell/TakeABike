@@ -35,12 +35,20 @@ def calculateRoute():
     destination = request.form ['destination']
     return render_template('results.html', origin=origin, destination=destination)
 
+
+# [START about]
+@app.route('/about')
+def about():
+    return render_template('about.html')
+# [END about]
+
 # [START form]
 @app.route('/form')
 def form():
     labels = "123"
     return render_template('form.html', labels=labels)
 # [END form]
+
 
 
 # [START submitted]
