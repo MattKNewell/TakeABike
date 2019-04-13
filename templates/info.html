@@ -29,31 +29,57 @@
         body{
           font-family: 'Alegreya', Serif;
         }
+        img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+        }
+
         </style>
       </head>
   <body>
      <div class="jumbotron">
             <h1 style="color:honeydew">General Information</h1>
     </div>
-    <!--Card 1-->
-    <div class="card mb-3">
-        <div class="card-body">
-            <img src="/static/Bike.gif" class="card-img-top" alt="...">
-          This is some text within a card body.
-        </div>
-      </div>
-      <!--Card 2-->
-      <div class="card">
-            <div class="card-body">
-              This is some text within a card body.
+    <div class="card-group">
+            <div class="card">
+              <img src="static/fit.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Health Info</h5>
+                <p class="card-text">The average person will burn between 450 to 750 calories per hour cycling. The number of calories depends on your weight, speed and time spent biking.</p>
+                <p class="card-text"><small class="text-muted">Link:
+                <a href="https://caloriesburnedhq.com/calories-burned-biking/">More info found here</a>
+                </small></p>
+              </div>
             </div>
-        </div>      
-        <!--Card 3-->
-     <div class="card">
-        <div class="card-body">
-                  This is some text within a card body.
-        </div>
-    </div>
-  
+            <div class="card">
+              <img src="static/Factory.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Enviromental Info</h5>
+                <p class="card-text">A typical passenger vehicle emits about 4.6 metric tons of carbon dioxide per year. This assumes the average gasoline vehicle on the road today has a fuel economy of about 22.0 miles per gallon and drives around 11,500 miles per year. Every gallon of gasoline burned creates about 8,887 grams of CO2.</p>
+                <p class="card-text">
+                    <small class="text-muted">Link:
+                        <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle">More info found here</a>
+                    </small>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="static/Bike.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Other Info</h5>
+                <p class="card-text">- Average calories burned while biking:
+                        600 * commute time (hours converted to decimal)
+                        </p>
+                <p class="card-text">- Gas saved for each trip: 
+                        trip distance / 22 mpg </p>
+                <p class="card-text">- Carbon emissions per day: 
+                        8.8kg * (trip distance / 22 mpg) * 2</p>
+                <p class="card-text"><small class="text-muted">Calculated by Us</small></p>
+              </div>
+            </div>
+          </div>
+          
   </body>
 </html>
