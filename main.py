@@ -23,6 +23,34 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 # [END create_app]
 
+
+import requests
+import json
+
+def send_request(session, source, destination, api_key):
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+source+"&destinations="+destination+"&key="+api_key
+    req = session.get(url)
+
+    return req
+
+def get_miles(r):
+    test_json = json.loads(r.text)['rows']
+    return test_json[0]['elements'][0]['distance']['text']
+
+def get_duration(r):
+    test_json = json.loads(r.text)['rows']
+    return test_json[0]['elements'][0]['duration']['text']
+
+#src = "Portland, OR"
+#dst = "Seattle, WA"
+#api_key = "AIzaSyAG3ZCHlwPGF_d5zx1WDBxT1TS5_1u3XYc"
+#session = requests.Session()
+#requests = send_request(src, dst, api_key)
+
+#print(get_miles(requests))
+#print(get_duration(requests))
+
+
 # [START home]
 @app.route('/')
 def home():
@@ -33,7 +61,23 @@ def home():
 def calculateRoute():
     origin = request.form['origin']
     destination = request.form ['destination']
-    return render_template('results.html', origin=origin, destination=destination)
+
+    print("origin: " + origin)
+    print("destination: " + destination)
+    api_k = "AIzaSyAG3ZCHlwPGF_d5zx1WDBxT1TS5_1u3XYc"
+
+    #session1 = requests.Session()
+    print(requests)
+    session = requests.Session()
+    req = send_request(session, origin, destination, api_k)
+
+    print(get_duration(req))
+    print(get_miles(req))
+
+    the_duration = get_duration(req)
+    the_miles = get_miles(req)
+
+    return render_template('results.html', origin=origin, destination=destination, the_duration=the_duration, the_miles=the_miles)
 
 # [START info]
 @app.route('/info')
