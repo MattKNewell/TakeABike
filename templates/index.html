@@ -16,6 +16,12 @@
     <body>
         <div class="content">
             <a href="../static/bike_clip_art.gif" target="_blank"><img class="bike_art" src="../static/bike_clip_art.gif" width="250" height="137" alt="A bike clip art" /></a>
+            <nav class = "sitenavigation">
+                <ul>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="info.html">info</a></li>
+                </ul>
+            </nav>
             <h1>TAKE A BIKE!</h1>
             <form method="post" action="{{ url_for('calculateRoute') }}">
                 <h2>Starting Location:</h2>
