@@ -35,6 +35,11 @@ def calculateRoute():
     destination = request.form ['destination']
     return render_template('results.html', origin=origin, destination=destination)
 
+# [START info]
+@app.route('/info')
+def info():
+    return render_template('info.html')
+# [END info]
 
 # [START about]
 @app.route('/about')
