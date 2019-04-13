@@ -29,16 +29,46 @@
     body{
       font-family: 'Alegreya', Serif;
     }
+    nav.sitenavigation {
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-size: 15 px;
+      font-family: 'Alegreya', Serif;
+    }
+    nav.sitenavigation li {
+      display: inline-block;
+      margin: 0.7em;
+    }
+    nav.sitenavigation a:link {
+      padding: 8px 20px;
+      border-radius: 12px;
+      color: black;
+      text-decoration: none;
+    }
+    nav.sitenavigation a:visited {
+      color: rgb(0,0,0);
+    }
+    nav.sitenavigation a:hover, nav.sitenavigation a:focus {
+      background-color: rgb(96, 172, 96);
+      color: rgb(255, 255, 255);
+    }
     </style>
   </head>
   <body>
     <div class="jumbotron">
       <h1 style="color:honeydew">ABOUT US!</h1>
     </div>
+    <nav class = "sitenavigation">
+      <ul>
+          <li><a href="index">take a bike</a></li>
+          <li><a href="info">info</a></li>
+      </ul>
+    </nav>
     <!--Allie-->
     <div class="card-group">
       <div class="card">
-        <img src="/static/Allie.jpeg" class="card-img-top" alt="...">
+        <img src="/static/Allie.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Allie Hanson</h5>
           <p class="card-text">Product Designer.  Current PSU student!</p>
