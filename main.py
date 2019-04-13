@@ -26,9 +26,10 @@ app = Flask(__name__)
 
 import requests
 import json
+import string
 
-def send_request(session, source, destination, api_key):
-    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+source+"&destinations="+destination+"&key="+api_key
+def send_request(session, source, destination, api_key, mode):
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+source+"&mode="+mode+"&destinations="+destination+"&key="+api_key
     req = session.get(url)
 
     return req
@@ -64,20 +65,40 @@ def calculateRoute():
 
     print("origin: " + origin)
     print("destination: " + destination)
-    api_k = "AIzaSyAG3ZCHlwPGF_d5zx1WDBxT1TS5_1u3XYc"
+    api_k = "AIzaSyCQonRJBaqRXX6bLjIiMMlZCsqN1jDHKA0"
 
-    #session1 = requests.Session()
     print(requests)
     session = requests.Session()
-    req = send_request(session, origin, destination, api_k)
+    req = send_request(session, origin, destination, api_k, "bicycling")
+    req1 = send_request(session, origin, destination, api_k, "driving")
 
     print(get_duration(req))
     print(get_miles(req))
 
-    the_duration = get_duration(req)
-    the_miles = get_miles(req)
+    the_duration = float(get_duration(req).split()[0])
+    the_miles = float(get_miles(req).split()[0])
 
-    return render_template('results.html', origin=origin, destination=destination, the_duration=the_duration, the_miles=the_miles)
+    the_duration_driving = get_duration(req1)
+    the_miles_driving = get_miles(req1)
+
+    driving_duration_mins = float(the_duration_driving.split()[0])
+    driving_miles = float(the_miles_driving.split()[0])
+
+    the_duration_hrs = the_duration/60
+    calories_burned = (the_duration_hrs*600)*2
+
+    gas_saved = (driving_miles/22)*2
+    gas_saved = str(round(gas_saved, 2))
+
+    carbon_emissions = 8.8*(driving_miles/22)*2
+
+    print(driving_duration_mins)
+    print(driving_miles)
+
+    return render_template('results.html', origin=origin, destination=destination, 
+        the_duration=the_duration, the_miles=the_miles, the_calories=calories_burned, 
+        the_gas=gas_saved, the_duration_driving=the_duration_driving, the_miles_driving=the_miles_driving, 
+        carbon_emissions=carbon_emissions)
 
 # [START info]
 @app.route('/info')

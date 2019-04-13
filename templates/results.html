@@ -11,13 +11,30 @@
         <meta name="viewport">
         <link href="https://fonts.googleapis.com/css?family=Alegreya|Questrial" rel="stylesheet">
         <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+        <style type="text/css">
+        .h1{
+            font-size: 30px;
+        }
+        .h2{
+            font-size: 20px;
+        }
+        .h3{
+            font-size: 15px;
+        }
+        </style>
     </head>
     <body>
         <div class="content">
             <a href="../static/bike_clip_art.gif" target="_blank"><img class="bike_art" src="../static/bike_clip_art.gif" width="250" height="137" alt="A bike clip art" /></a>
-            <h1>ROUTE SUMMARY</h1>
-            <h2>Miles:{{the_miles}}</h2>
-            <h2>Time:{{the_duration}}</h2>
+            <h1 style="font-size: 40px">ROUTE SUMMARY</h1>
+            <h2 style="font-size: 35px">Driving Info</h2>
+            <h2>Distance (miles): {{the_miles_driving}} &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp  Time (minutes): {{the_duration_driving}}</h2>
+
+            <h2 style="font-size: 35px">Bicycling Info</h2>
+            <h2>Calories burned: {{the_calories}}</h2>
+            <h2>Distance (miles): {{the_miles}} &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp  Time (minutes): {{the_duration}}</h2>
+            <h2>Gas saved (gallons): {{the_gas}} &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp Carbon Emissions Prevented (kg): {{carbon_emissions}}</h2>
+            
             <br><br>
         </div>
         {{origin}}
