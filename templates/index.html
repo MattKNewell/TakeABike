@@ -16,14 +16,16 @@
     <body>
         <div class="content">
             <h1>TAKE A BIKE!</h1>
-            <form method="post" action="{{ url_for('submitted_form') }}">
-                Start:
-                <input type="text" id="origin" name="origin">
-                <br><br>
-                Destination:
-                <input type="text" id="destination" name="destination">
-                <br><br>
-                <input type="button" name="btnSubmit" id="btnSubmit" value="Calculate Route"/>
+            <form method="post" action="{{ url_for('calculateRoute') }}">
+                <div class="userInput">
+                    Start:
+                    <input type="text" id="origin" name="origin">
+                    <br><br>
+                    Destination:
+                    <input type="text" id="destination" name="destination">
+                    <br><br>
+                </div>
+                <input type="submit" name="userSub" id="userSub" value="Calculate Route"/>
                 <br><br>
             </form>
         </div>

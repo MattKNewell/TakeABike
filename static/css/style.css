@@ -36,20 +36,19 @@ h1 {
 
 /* main content */
 .content {
+    max-width: 400px;
     position: absolute;
     left: 50%;
     top: 30%;
     -webkit-transform: translate(-50%, -30%);
     transform: translate(-50%, -30%);
 }
-#btnSubmit {
+
+.userInput {
+    width: 100%;
+    clear: both;
+}
+
+#userSub {
     font-family: 'Alegreya', Serif;
-}
-
-#origin {
-    text-align: right;
-}
-
-#destination {
-    text-align: right;
 }

@@ -29,6 +29,12 @@ def home():
     return render_template('index.html')
 # [END home]
 
+@app.route('/results', methods=['POST'])
+def calculateRoute():
+    origin = request.form['origin']
+    destination = request.form ['destination']
+    return render_template('results.html', origin=origin, destination=destination)
+
 # [START form]
 @app.route('/form')
 def form():
