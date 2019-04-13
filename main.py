@@ -91,6 +91,7 @@ def calculateRoute():
     gas_saved = str(round(gas_saved, 2))
 
     carbon_emissions = 8.8*(driving_miles/22)*2
+    carbon_emissions = str(round(carbon_emissions, 2))
 
     print(driving_duration_mins)
     print(driving_miles)
