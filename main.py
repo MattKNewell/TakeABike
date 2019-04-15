@@ -42,14 +42,6 @@ def get_duration(r):
     test_json = json.loads(r.text)['rows']
     return test_json[0]['elements'][0]['duration']['text']
 
-#src = "Portland, OR"
-#dst = "Seattle, WA"
-#api_key = "AIzaSyAG3ZCHlwPGF_d5zx1WDBxT1TS5_1u3XYc"
-#session = requests.Session()
-#requests = send_request(src, dst, api_key)
-
-#print(get_miles(requests))
-#print(get_duration(requests))
 
 
 # [START home]
@@ -65,7 +57,7 @@ def calculateRoute():
 
     print("origin: " + origin)
     print("destination: " + destination)
-    api_k = "AIzaSyCQonRJBaqRXX6bLjIiMMlZCsqN1jDHKA0"
+    api_k = "AIzaSyCL1hu6LWm9YJqTHOMgqfIt6fUHsPoc4rQ"
 
     print(requests)
     session = requests.Session()
@@ -74,8 +66,11 @@ def calculateRoute():
 
     print(get_duration(req))
     print(get_miles(req))
-
+    
+    mins_or_hours = get_duration(req).split()[1]
+    print(mins_or_hours)
     the_duration = float(get_duration(req).split()[0])
+    #the_duration = get_duration(req)
     the_miles = float(get_miles(req).split()[0])
 
     the_duration_driving = get_duration(req1)
@@ -99,7 +94,7 @@ def calculateRoute():
     return render_template('results.html', origin=origin, destination=destination, 
         the_duration=the_duration, the_miles=the_miles, the_calories=calories_burned, 
         the_gas=gas_saved, the_duration_driving=the_duration_driving, the_miles_driving=the_miles_driving, 
-        carbon_emissions=carbon_emissions)
+        carbon_emissions=carbon_emissions, mins_or_hours=mins_or_hours)
 
 # [START info]
 @app.route('/info')
