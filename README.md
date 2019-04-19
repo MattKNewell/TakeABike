@@ -1,6 +1,8 @@
 
 
 ## WiCS Spring 2019 - Take A Bike!
+
+This was created in about 6 hours in a team of 5 during the WiCS Spring 2019 Hackathon.
 ---
 **Description**
 A web app to help car communtors decide to take a bike instead!
@@ -15,7 +17,5 @@ To run this locally:
 2. `python main.py`
 
 -------------
-Working on tasks
-
-https://trello.com/b/cVX8NzS8/take-a-bike
+Old Api Keys were deleted. You can sign up for your own api on Google Cloud Platform - maps
 
